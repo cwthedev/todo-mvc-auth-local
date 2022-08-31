@@ -1,9 +1,20 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
+//user schema includes indication for admin status
 const UserSchema = new mongoose.Schema({
-  userName: { type: String, unique: true },
-  email: { type: String, unique: true },
+  userName: { 
+    type: String, 
+    unique: true 
+  },
+  email: { 
+    type: String, 
+    unique: true 
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false,
+  },
   password: String
 })
 
