@@ -1,5 +1,5 @@
 # Introduction
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+Was a Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app. Being converted into a shift task check off shee with different roles and an admin side that can view what the other roles have done.
 
 ---
 
@@ -9,7 +9,7 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+- Make tbe beginner code base our own :)
 
 ---
 
@@ -28,7 +28,8 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Install all the dependencies or node packages used for development via Terminal
 
 `npm install` 
-
+or
+`npm install --save bcrypt connect-mongo dotenv ejs express express-flash express-session mongodb mongoose morgan nodemon passport passport-local validator`
 ---
 
 # Things to add
