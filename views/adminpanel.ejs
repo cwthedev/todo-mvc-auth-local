@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>ADMIN PANEL</h1>
+
+
+    <% users.forEach( uel => { %>
+       <h3> <%= uel.userName %> </h3>  
+       <ul>
+        <% todos.forEach( el => { if ( uel._id == el.userId ) { %>
+                <li class='todoItem' data-id='<%=el._id%>'>
+                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                   <!-- <span class='del'> Delete </span> -->
+                </li>
+        <% }}) %>    
+    </ul> 
+    <% }) %>    
 
 
     <a href="/todos">Back to Personal Todos</a>
