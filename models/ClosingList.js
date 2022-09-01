@@ -1,30 +1,31 @@
 const mongoose = require('mongoose')
 
-const TodoSchema = new mongoose.Schema({
+const ClosingSchema = new mongoose.Schema({
   cleanBathroom: {
     type: String, 
-
+    // default: false,
 
   },
   getCarts: {
     type: String, 
-
+    // default: false,
 
   },
   sweep: {
     type: String, 
-
+    // default: false,
 
   },
   closeRegister: {
     type: String, 
-
+    // default: false,
 
   },
-    userId: {
+  userId: {
     type: String,
     required: true
   }
+
 
   // todo: {
   //   type: String,
@@ -40,4 +41,4 @@ const TodoSchema = new mongoose.Schema({
   // }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('ClosingList', ClosingSchema)

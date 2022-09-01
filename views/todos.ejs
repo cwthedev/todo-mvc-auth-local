@@ -9,21 +9,25 @@
 </head>
 <body>
     <h1>Todos</h1>
-    <ul>
-    <% todos.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                <span class='del'> Delete </span>
-            </li>
-    <% }) %>    
-    </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <form action="/todos/createTodo" method="POST" id="closing-list" onsubmit="return alert(`Task completion uploaded.`)">
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
+        <label for="cleanBathroom">Cleaned Bathroom:</label>
+        <input type="text" name="cleanBathroom" value="" placeholder="please sign your name">
+
+        <label for="getCarts">Get Carts:</label>
+        <input type="text" name="getCarts" value="" placeholder="please sign your name">
+
+        <label for="sweep">Get Carts:</label>
+        <input type="text" name="sweep" value="" placeholder="please sign your name">
+
+        <label for="closeRegister">Close Register:</label>
+        <input type="text" name="closeRegister" value="" placeholder="please sign your name">
+
+        <button id="form-submit" type="submit">Upload</button>
+
     </form>
+
 
     <!-- admin panel link -->
     <% if (user.isAdmin) { %>
