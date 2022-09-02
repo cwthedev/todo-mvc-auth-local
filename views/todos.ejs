@@ -13,16 +13,38 @@
     <form action="/todos/createTodo" method="POST" id="closing-list" onsubmit="return alert(`Task completion uploaded.`)">
 
         <label for="cleanBathroom">Cleaned Bathroom:</label>
-        <input type="text" name="cleanBathroom" value="" placeholder="please sign your name">
+            <select name="cleanBathroom">
+                <option value="">--Select an option--</option>
+                <option value="true">Completed</option>
+                <option value="false">Did not complete</option>
+            </select>
 
         <label for="getCarts">Get Carts:</label>
-        <input type="text" name="getCarts" value="" placeholder="please sign your name">
+            <select name="getCarts">
+                <option value="">--Select an option--</option>
+                <option value="true">Completed</option>
+                <option value="false">Did not complete</option>
+            </select>
 
         <label for="sweep">Swept:</label>
-        <input type="text" name="sweep" value="" placeholder="please sign your name">
+            <select name="sweep">
+                <option value="">--Select an option--</option>
+                <option value="true">Completed</option>
+                <option value="false">Did not complete</option>
+            </select>
 
         <label for="closeRegister">Close Register:</label>
-        <input type="text" name="closeRegister" value="" placeholder="please sign your name">
+            <select name="closeRegister">
+                <option value="">--Select an option--</option>
+                <option value="true">Completed</option>
+                <option value="false">Did not complete</option>
+            </select>
+
+        <label for="notes">Notes:</label>
+            <input type="text" name="notes" placeholder="If you were unable to complete any tasks please write down why" value="" id="notes">
+
+        <label for="signature">Signature:</label>
+            <input type="text" name="signature" placeholder="Please sign your name" required value="">
 
         <button id="form-submit" type="submit">Upload</button>
 
