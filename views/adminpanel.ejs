@@ -9,11 +9,39 @@
 </head>
 <body>
     <h1>ADMIN PANEL</h1>
-    <% let x = [] %>
-    <% lists.forEach( cli => { %>
-        <% x.push(cli.createdAt.toLocaleDateString() )%>
-        <%= x%>
-        <% }) %>
+    <% let ukvp = {} %>
+        <% users.forEach(entry => { 
+            ukvp[entry._id] = entry.userName;
+     }) %>
+
+     <%let currdate= null%>
+     <% lists.forEach( listI => { %>
+        <% if(currdate != listI.createdAt.toLocaleDateString()) { 
+            if(currdate != null) { %>
+            </ul>
+            <% }
+            currdate = listI.createdAt.toLocaleDateString(); %>
+            <h3><%= currdate%></h3>
+            <ul>
+        <% }
+            if(listI.cleanBathroom){ %>
+                <li>Cleaned Bathroom: <%= ukvp[listI.userId]%> </li>
+            <% } 
+            if(listI.getCarts){ %>
+               <li> Got Carts: <%= ukvp[listI.userId] %> </li>
+            <% }
+            if(listI.sweep){ %>
+                <li>Swept: <%= ukvp[listI.userId] %></li>
+            <% }
+            if(listI.closeRegister){ %>
+                <li>Closed Register: <%= ukvp[listI.userId] %></li>
+            <% } %>
+    <% }) %>
+
+    <%if (currdate != null){ %>
+    </ul>
+        <% } %>
+
     <a href="/todos">Back to Personal Todos</a>
     <a href="/logout">Logout</a>
 
