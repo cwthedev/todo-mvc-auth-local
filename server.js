@@ -11,6 +11,7 @@ const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 
 require('dotenv').config({path: './config/.env'})
+const PORT = process.env.PORT || 3000
 
 // Passport config
 require('./config/passport')(passport)
@@ -42,5 +43,5 @@ app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
  
 app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
+    console.log(`Server is running, you better catch it at http:localhost:${PORT}!`)
 })    

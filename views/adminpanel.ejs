@@ -14,11 +14,14 @@
     <% users.forEach( uel => { %>
        <h3> <%= uel.userName %> </h3>  
        <ul>
-        <% todos.forEach( el => { if ( uel._id == el.userId ) { %>
-                <li class='todoItem' data-id='<%=el._id%>'>
-                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-                   <!-- <span class='del'> Delete </span> -->
-                </li>
+
+        <% lists.forEach( el => { if ( uel._id == el.userId ) { %>
+                <ul class='todoItem' data-id='<%=el._id%>'>
+                    <li class=''>Cleaned bathroom: <%= el.cleanBathroom %></li>
+                    <li class=''>Brought in carts: <%= el.getCarts %></li>
+                    <li class=''>Swept: <%= el.sweep %></li>
+                    <li class=''>Closed Register: <%= el.closeRegister %></li>
+                </ul>
         <% }}) %>    
     </ul> 
     <% }) %>    
