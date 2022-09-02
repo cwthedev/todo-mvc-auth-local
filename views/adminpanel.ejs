@@ -14,6 +14,7 @@
     <% users.forEach( uel => { %>
        <h3> <%= uel.userName %> </h3>  
        <ul>
+
         <% lists.forEach( el => { if ( uel._id == el.userId ) { %>
                 <ul class='todoItem' data-id='<%=el._id%>'>
                     <li class=''>Cleaned bathroom: <%= el.cleanBathroom %></li>
