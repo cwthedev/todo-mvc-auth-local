@@ -54,23 +54,42 @@ table {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 600;
     text-align: center;
-    margin-top: 5rem;
+    margin-top: 15rem;
 }
 .loginAndSignupSection {
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .loginSignup {
     text-decoration: none;
+    text-align: center;
 }
 
-body {
-    /* display: flex; */
+#loginLink {
+    padding-right: .8rem;
+    font-weight: bold;
+}
+
+#signupLink {
+    padding-left: .8rem;
+    font-weight: bold;
+}
+
+#loginLink, #signupLink {
+    font-size: 2rem;
+    color: #A66CFF;
 }
 
 
