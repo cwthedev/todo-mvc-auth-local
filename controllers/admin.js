@@ -9,8 +9,15 @@ module.exports = {
     getAdminPanel: async (req,res)=>{
         console.log(req.user.isAdmin)
         try{
+            let twoDaysAgo = new Date();
+            twoDaysAgo.setUTCDate(twoDaysAgo.getDate()-2);
+            twoDaysAgo.setHours(0)
+            twoDaysAgo.setMinutes(0)
+            twoDaysAgo.setSeconds(0)
+            twoDaysAgo.setMilliseconds(0)
+            console.log(twoDaysAgo)
             if (req.user.isAdmin == true) {
-                const closingLists = await ClosingList.find().sort({'userId':1})
+                const closingLists = await ClosingList.find({createdAt: {$gt: twoDaysAgo}}).sort({'createdAt':-1})
                 const userList = await User.find().sort({'userName':1})
                 // const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
                 console.log(closingLists)

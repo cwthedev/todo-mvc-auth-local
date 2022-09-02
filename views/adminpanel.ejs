@@ -9,24 +9,11 @@
 </head>
 <body>
     <h1>ADMIN PANEL</h1>
-
-
-    <% users.forEach( uel => { %>
-       <h3> <%= uel.userName %> </h3>  
-       <ul>
-
-        <% lists.forEach( el => { if ( uel._id == el.userId ) { %>
-                <ul class='todoItem' data-id='<%=el._id%>'>
-                    <li class=''>Cleaned bathroom: <%= el.cleanBathroom %></li>
-                    <li class=''>Brought in carts: <%= el.getCarts %></li>
-                    <li class=''>Swept: <%= el.sweep %></li>
-                    <li class=''>Closed Register: <%= el.closeRegister %></li>
-                </ul>
-        <% }}) %>    
-    </ul> 
-    <% }) %>    
-
-
+    <% let x = [] %>
+    <% lists.forEach( cli => { %>
+        <% x.push(cli.createdAt.toLocaleDateString() )%>
+        <%= x%>
+        <% }) %>
     <a href="/todos">Back to Personal Todos</a>
     <a href="/logout">Logout</a>
 
