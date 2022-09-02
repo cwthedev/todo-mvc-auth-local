@@ -126,13 +126,14 @@ h1 {
     transition: 0.5s;
 }
 
-.signupFields {
+.signupFields, .loginFields {
     display: flex;
     margin-top: 15rem;
     justify-content: center;
 }
 
-.signupFields input:not(.button) {
+/* This style applies to sign up and login page inputs but excluses the buttons */ 
+.signupFields input:not(.button), .loginFields input:not(.button) {
     margin: 0 7px 0 7px;
     padding-left: 5px;
 } 
@@ -153,6 +154,9 @@ h1 {
     color: var(--background-color);
     transition: 0.5s;
 } 
+
+/* LOGIN PAGE */
+
 
 
 
