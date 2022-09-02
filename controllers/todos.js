@@ -18,6 +18,8 @@ module.exports = {
             getCarts: req.body.getCarts,
             sweep: req.body.sweep,
             closeRegister: req.body.closeRegister,
+            notes: req.body.notes,
+            signature: req.body.signature,
             userId: user._id
         })
         try{
