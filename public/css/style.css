@@ -137,6 +137,23 @@ h1 {
     padding-left: 5px;
 } 
 
+.linkToHomepage {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    text-decoration: none;
+}
+
+.linkToHomepage span {
+    color: black;
+    font-size: 1em;
+}
+
+.linkToHomepage span:hover {
+    color: var(--background-color);
+    transition: 0.5s;
+} 
+
 
 
 
