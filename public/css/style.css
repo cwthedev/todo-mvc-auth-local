@@ -155,22 +155,30 @@ h1 {
     transition: 0.5s;
 } 
 
-/* LOGIN PAGE */
+/* TODOS PAGE */
 
-
-
-
-
-
-/* NOT SURE IF WE NEED THESE COMMENTED OUT THINGS
-/* .completed{
-    text-decoration: line-through;
-    color: gray;
+.todosTitle {
+    margin-top: 5rem;
 }
-.not{
-    text-decoration: underline;
+
+.logoutLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
-*/
+
+.logoutLink a{
+    text-decoration: none;
+    color: black;
+}
+
+.logoutLink a:hover {
+    color: var(--background-color);
+    transition: 0.5s;
+
+}
+
+
 
 #closing-list {
     margin: 1rem auto;

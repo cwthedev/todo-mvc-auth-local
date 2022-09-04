@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google font link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open   +Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- external css stylesheet-->
+    <link href="/css/style.css" rel="stylesheet">
     <title><%= user.userName %>'s ToDos</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1 class="todosTitle">Todos</h1>
 
     <form action="/todos/createTodo" method="POST" id="closing-list" onsubmit="return alert(`Task completion uploaded.`)">
 
@@ -46,7 +52,7 @@
         <label for="signature">Signature:</label>
             <input type="text" name="signature" placeholder="Please sign your name" required value="">
 
-        <button id="form-submit" type="submit">Upload</button>
+        <button id="form-submit" type="submit" class="button">Upload</button>
 
     </form>
 
@@ -55,7 +61,8 @@
     <% if (user.isAdmin) { %>
     <a href="/adminpanel">Admin Panel</a>
     <%} %>
-    <a href="/logout">Logout</a>
+
+    <span class="logoutLink"><a href="/logout">Logout</a></span>
 
     <script src="js/main.js"></script>
 </body>
