@@ -159,6 +159,7 @@ h1 {
 
 .todosTitle {
     margin-top: 5rem;
+    margin-bottom: 1.5rem;
 }
 
 .logoutLink {
@@ -170,6 +171,7 @@ h1 {
 .logoutLink a{
     text-decoration: none;
     color: black;
+    padding-bottom: 3rem;
 }
 
 .logoutLink a:hover {
@@ -177,6 +179,18 @@ h1 {
     transition: 0.5s;
 
 }
+
+.adminPanelLink {
+    text-align: center;
+    margin-top: 2rem;
+    color: black;
+}
+
+.uploadButton {
+    margin-top: 1.5rem;
+}
+
+/* ADMIN PANEL */
 
 
 

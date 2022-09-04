@@ -52,14 +52,14 @@
         <label for="signature">Signature:</label>
             <input type="text" name="signature" placeholder="Please sign your name" required value="">
 
-        <button id="form-submit" type="submit" class="button">Upload</button>
+        <button id="form-submit" type="submit" class="button uploadButton">Upload</button>
 
     </form>
 
 
     <!-- admin panel link -->
     <% if (user.isAdmin) { %>
-    <a href="/adminpanel">Admin Panel</a>
+    <a href="/adminpanel" class="adminPanelLink">Admin Panel</a>
     <%} %>
 
     <span class="logoutLink"><a href="/logout">Logout</a></span>
