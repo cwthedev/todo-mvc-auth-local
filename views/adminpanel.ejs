@@ -9,39 +9,57 @@
 </head>
 <body>
     <h1>ADMIN PANEL</h1>
-    <% let ukvp = {} %>
-        <% users.forEach(entry => { 
-            ukvp[entry._id] = entry.userName;
-     }) %>
-
-     <%let currdate= null%>
-     <% lists.forEach( listI => { %>
-        <% if(currdate != listI.createdAt.toLocaleDateString()) { 
-            if(currdate != null) { %>
-            </ul>
-            <% }
-            currdate = listI.createdAt.toLocaleDateString(); %>
-            <h3><%= currdate%></h3>
-            <ul>
-        <% }
-            if(listI.cleanBathroom){ %>
-                <li>Cleaned Bathroom: <%= ukvp[listI.userId]%> </li>
-            <% } 
-            if(listI.getCarts){ %>
-               <li> Got Carts: <%= ukvp[listI.userId] %> </li>
-            <% }
-            if(listI.sweep){ %>
-                <li>Swept: <%= ukvp[listI.userId] %></li>
-            <% }
-            if(listI.closeRegister){ %>
-                <li>Closed Register: <%= ukvp[listI.userId] %></li>
-            <% } %>
-    <% }) %>
-
-    <%if (currdate != null){ %>
-    </ul>
+    <table>
+        <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Tasks Completed</th>
+            <th>Notes</th>
+            <th>Signature</th>
+        </tr>
+        <%let currdate= null%>
+        <% for (let i = 0; i < lists.length; i++) { %>
+        <tr>
+            <td>
+                <%= lists[i].userName %>
+            </td>
+            <td>
+                <%= lists[i].createdAt.toLocaleDateString() %>
+            </td>
+            <td>
+                <ul>
+                    <li>
+                    <% if (lists[i].cleanBathroom == true) { %>
+                        Cleaned Bathroom
+                    <% } %>
+                    </li>
+                    <li>
+                    <% if (lists[i].getCarts == true) { %>
+                        Brought in Carts
+                    <% } %>
+                    </li>
+                    <li>
+                    <% if (lists[i].sweep == true) { %>
+                        Swept
+                    <% } %>
+                    </li>
+                    <li>
+                    <% if (lists[i].closeRegister == true) { %>
+                        Closed Register
+                    <% } %>
+                </li>
+                </ul>
+            </td>
+            <td>
+                <%= lists[i].notes %>
+            </td>
+            <td>
+                <%= lists[i].signature %>
+            </td>
+        </tr>
         <% } %>
 
+    </table>
     <a href="/todos">Back to Personal Todos</a>
     <a href="/logout">Logout</a>
 
