@@ -20,6 +20,7 @@ module.exports = {
             closeRegister: req.body.closeRegister,
             notes: req.body.notes,
             signature: req.body.signature,
+            userName: user.userName,
             userId: user._id
         })
         try{
