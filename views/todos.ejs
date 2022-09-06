@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="todosTitle">Todos</h1>
+    <h1 class="todosTitle">Closing List</h1>
 
     <form action="/todos/createTodo" method="POST" id="closing-list" onsubmit="return alert(`Task completion uploaded.`)">
 
@@ -51,6 +51,8 @@
 
         <label for="signature">Signature:</label>
             <input type="text" name="signature" placeholder="Please sign your name" required value="">
+
+            <input type="hidden" name="userName" value="<%= user.userName %>">
 
         <button id="form-submit" type="submit" class="button uploadButton">Upload</button>
 
