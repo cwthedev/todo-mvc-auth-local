@@ -191,6 +191,35 @@ h1 {
 }
 
 /* ADMIN PANEL */
+.admin-panel-title {
+    margin-bottom: 3.5rem;
+}
+/* Table */
+.content-table {
+    border-collapse: collapse;
+    /* margin: 25px 0; */
+    font-size: 1em;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+
+}
+
+.content-table tr > th {
+    background-color: var(--background-color);
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    padding: 10px 18px;
+     
+}
+
+.content-table tr,
+.content-table td {
+    padding: 10px 20px;
+}
 
 
 
@@ -200,6 +229,7 @@ h1 {
     flex-direction: column;
     gap: 1rem;
     width: 25%;
+    min-width: 400px;
 } 
 
 #notes {
