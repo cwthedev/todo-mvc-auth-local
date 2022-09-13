@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <!-- google font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open   +Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- external css stylesheet-->
-    <link href="/css/style.css" rel="stylesheet">
-</head>
+<!-- Include header -->
+<%- include('partials/_header') %>
+<!-- /Include header -->
 <body>
-    <h1 class="admin-panel-title">Admin Panel</h1>
+    <h1 class="admin-panel-title">Manager Panel</h1>
     <table class="content-table">
         <tr>
             <th>Employee</th>
-            <th>Date</th>
+            <th>Date Completed</th>
             <th>Tasks Completed</th>
             <th>Notes</th>
-            <th>Signature</th>
+            <th>Employee Signature</th>
         </tr>
         <%let currdate= null%>
         <% for (let i = 0; i < lists.length; i++) { %>
@@ -36,22 +24,22 @@
                 <ul>
                     <li>
                     <% if (lists[i].cleanBathroom == true) { %>
-                        Cleaned Bathroom
+                       <span>&#x2713;</span> Cleaned Bathroom
                     <% } %>
                     </li>
                     <li>
                     <% if (lists[i].getCarts == true) { %>
-                        Brought in Carts
+                        <span>&#x2713;</span> Brought in Carts
                     <% } %>
                     </li>
                     <li>
                     <% if (lists[i].sweep == true) { %>
-                        Swept
+                        <span>&#x2713;</span> Swept
                     <% } %>
                     </li>
                     <li>
                     <% if (lists[i].closeRegister == true) { %>
-                        Closed Register
+                        <span>&#x2713;</span> Closed Register
                     <% } %>
                 </li>
                 </ul>
@@ -66,9 +54,8 @@
         <% } %>
 
     </table>
-    <a href="/todos">Back to Personal Todos</a>
-    <a href="/logout">Logout</a>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+    <a href="/todos" class="adminPanelLink">Back to Personal Todos</a>
+    <a href="/logout" class="adminPanelLink">Logout</a>
+<!-- Include footer -->
+    <%- include('partials/_pagebottom') %>
+<!-- /Include footer -->
