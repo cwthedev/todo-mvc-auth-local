@@ -1,0 +1,27 @@
+<!-- Include header -->
+<%- include('partials/_header') %>
+<!-- /Include header -->
+<body>
+    <h1 class="todosTitle">Apply for Manager Privileges</h1>
+
+    <form action="/updateManager" method="POST" id="apply" onsubmit="return alert(`Request granted.`)">
+
+        <label for="applysignature">Please sign below in order to apply for manager level system privileges:</label>
+            <input type="text" name="applysignature" placeholder="Please sign your name" required value="" id="signature">
+
+            <input type="hidden" name="userName" value="<%= user.userName %>">
+
+        <button id="appy-form-submit" type="submit" class="button uploadButton">Upload</button>
+
+    </form>
+
+
+    <!-- admin panel link -->
+    <% if (user.isAdmin) { %>
+    <a href="/adminpanel" class="adminPanelLink">Admin Panel</a>
+    <% } %>
+    <span class="logoutLink"><a href="/logout">Logout</a></span>
+
+<!-- Include footer -->
+<%- include('partials/_pagebottom') %>
+<!-- /Include footer -->

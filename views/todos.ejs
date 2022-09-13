@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- google font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open   +Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- external css stylesheet-->
-    <link href="/css/style.css" rel="stylesheet">
-    <title><%= user.userName %>'s ToDos</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<!-- Include header -->
+<%- include('partials/_header') %>
+<!-- /Include header -->
 <body>
     <h1 class="todosTitle">Closing List</h1>
 
@@ -25,7 +13,7 @@
                 <option value="false">Did not complete</option>
             </select>
 
-        <label for="getCarts">Get Carts:</label>
+        <label for="getCarts">Brought in Carts:</label>
             <select name="getCarts">
                 <option value="false">--Select an option--</option>
                 <option value="true">Completed</option>
@@ -39,7 +27,7 @@
                 <option value="false">Did not complete</option>
             </select>
 
-        <label for="closeRegister">Close Register:</label>
+        <label for="closeRegister">Closed Register:</label>
             <select name="closeRegister">
                 <option value="false">--Select an option--</option>
                 <option value="true">Completed</option>
@@ -50,7 +38,7 @@
             <input type="text" name="notes" placeholder="If you were unable to complete any tasks please write down why" value="" id="notes">
 
         <label for="signature">Signature:</label>
-            <input type="text" name="signature" placeholder="Please sign your name" required value="">
+            <input type="text" name="signature" placeholder="Please sign your name" required value="" id="signature">
 
             <input type="hidden" name="userName" value="<%= user.userName %>">
 
@@ -61,11 +49,12 @@
 
     <!-- admin panel link -->
     <% if (user.isAdmin) { %>
-    <a href="/adminpanel" class="adminPanelLink">Admin Panel</a>
-    <%} %>
-
+    <a href="/adminpanel" class="adminPanelLink">Manager Panel</a>
+    <%} else {%>
+        <a href="/apply" class="adminPanelLink">Apply for Manager Privileges</a>
+    <% } %>
     <span class="logoutLink"><a href="/logout">Logout</a></span>
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+<!-- Include footer -->
+<%- include('partials/_pagebottom') %>
+<!-- /Include footer -->

@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- google font link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open   +Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- external css stylesheet-->
-    <link href="/css/style.css" rel="stylesheet">
-    <title>Login</title>
-</head>
+<!-- Include header -->
+<%- include('partials/_header') %>
+<!-- /Include header -->
 <body>
+    <h1 class="login-panel-title">Log In Here</h1>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -29,5 +19,6 @@
         <input type="submit" class="button">
     </form>
         <a href="/" class="linkToHomepage"><span>Back to homepage</span></a>
-</body>
-</html>
+<!-- Include footer -->
+<%- include('partials/_pagebottom') %>
+<!-- /Include footer -->
