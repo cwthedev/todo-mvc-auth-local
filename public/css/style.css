@@ -270,3 +270,9 @@ h1 {
 #signature:focus::placeholder {
     color: transparent;
   }
+
+  .datePicker{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5em;
+  }

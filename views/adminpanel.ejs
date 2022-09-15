@@ -1,8 +1,20 @@
 <!-- Include header -->
 <%- include('partials/_header') %>
 <!-- /Include header -->
+<% let today = new Date(eDay);
+let before = new Date(sDay);
+//before.setUTCDate(before.getDate()-5) 
+%>
 <body>
     <h1 class="admin-panel-title">Manager Panel</h1>
+    <form class="datePicker" action="/adminpanel">
+        <label for="startDate">Starting</label>
+        <input type="date" name="startDate" id="startDate" value=<%= before.toISOString().substring(0,10) %> >
+        <label for="endDate">Ending</label>
+        <input type="date" name="endDate" id="endDate" value=<%= today.toISOString().substring(0,10) %> >
+        <input type="submit" />
+    </form>
+
     <table class="content-table">
         <tr>
             <th>Employee</th>
